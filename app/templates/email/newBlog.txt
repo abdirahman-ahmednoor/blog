@@ -1,0 +1,8 @@
+Dear Subscribers!
+
+Sign in and check out this new blog and comments.
+
+Title: {{newBlog.title_blog}}
+Post: {{newBlog.description | truncate(50)}}
+
+Yours sincerely

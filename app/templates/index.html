@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+{%block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
+{% block content %}
+{% for quote in getquotes %}
+<div class="container-fluid" style="font-size: 25px; font-family: 'Helvetica Neue';  padding-top: 40px;">
+    
+        
+            <h1 class="text-center" style="color: gray">"Welcome to Legendary!"</h1>
+        
+    
+
+    <div>
+        <div class="card card-image">
+            <div class="text-white text-center py-5 px-4">
+                <div class="py-5" style="background-image: url('https://images.unsplash.com/photo-1559163499-413811fb2344?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');">
+
+<a class="btn grey-gradient" aria-haspopup="true" aria-expanded="false"
+                        href="{{url_for('main.allBlogs')}}">Click here to view all Blogs</a>
+                    <h5 class="h5 red-text">Blogging refers to writing, photography, and other media that's self-published online..</h5>
+                    <h2 class="card-title h2 my-4 py-2">{{quote.author}}</h2>
+                    <p class="mb-4 pb-2 px-md-5 mx-md-5">{{quote.quote}}</p>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer font-small dark primary-color">
+
+        <div class="footer-copyright text-center py-3">© Abdirahman 2021 Copyright|
+            <a href="#">My Blog</a>
+        </div>
+
+    </footer>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+{% import 'macros.html' as macro %} 
+
+{% block content %} 
+<div class="container" style="background-color: azure; font-size: 20px; font-family: 'Courier New', Courier, monospace; padding-top: 40px;">
+    <h3 class="text-center mt-3">My Profile</h3>
+    <hr>
+    <div class="row">
+        <!-- displaying username -->
+        {% if user.profile_pic_path %} 
+        <img src="{{url-for('static', filename = user.profile_pic_path)}}" alt="" class="img-thumbnail">
+        {% else %} 
+        <p>No profile pic</p>
+        {% endif %} 
+        <div class="col-8">
+            <!-- displaying user bio -->
+            <div class="mr-5">
+                <span class="row">
+                    <h3 class="h3">Username: </h3>
+                    <p class="h3">{{user.username | capitalize}}</p>
+                </span>
+                {% if user.bio %} 
+                <p class="h3">Bio: {{user.bio}}</p>
+                {% else %}
+                <p>{{user.username | capitalize}} has ni bio</p>
+                {% endif %} 
+                {% if user == current_user %} 
+                <form action="{{url_for('main.update_profile', uname = user.username)}}" method="post" enctype="multipart/form-data" class="pt-5">
+                    <div class="form-group">
+                        <input type="file" name="photo" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+                {% endif %} 
+                {% if user == current_user %} 
+                <a href="{{url_for('main.update_profile', uname = user.username)}}" class="btn btn-default btn-center -center">Edit Profile</a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</div>

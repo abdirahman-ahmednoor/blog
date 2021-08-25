@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to Legendary!
+We have just seen you have signed up for our applicatipon and want to welcome you to the family. Please enjoy viewing the quotes. You can post yours, comment on quotes and delete.
