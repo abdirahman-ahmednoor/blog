@@ -1,1 +1,3 @@
-export SECRET_KEY = 'ma
+export SECRET_KEY = 'maziwa'
+
+python3.6 manage.py server 
