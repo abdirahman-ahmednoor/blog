@@ -17,7 +17,7 @@ To access this project on you local files, you can clone it using these steps:
 2. Flask WTF
 3. Flask Login
 4. Flask Mail
-5. Flask Uploads
+5. Flas
 6. Python Virtual
 
 ## TECHNOLOGIES USED
