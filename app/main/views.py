@@ -65,7 +65,7 @@ def newBlog():
             mail_message("Alert New Blog","email/newBlog",subscriber.email,newBlog=newBlog)
         return redirect(url_for('main.index'))
         flash('New Blog Posted')
-        return redirect(url_for('main.allBlogs'))
+        return redirect(url_for('main.getallBlogs'))
     title = 'New Blog'
     return render_template('newBlog.html', title=title, blog_form=blogForm)
 
