@@ -1,1 +1,1 @@
-SECRET_KEY = 'ma'
+SECRET_KEY = 'maziwa'
